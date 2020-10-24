@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulations</title>
+    <style>
+      body {
+        position:relative;
+        left:50px;
+        max-width: 850px;
+        min-width: 100px;
+        text-align:justify;
+        }
+    </style>
+    <script src="p5/p5.js"></script>
+    <script src="p5/addons/p5.dom.js"></script>
+    <script src="randomsampler.js"></script>
+    <script src="sketch.js"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async
+        src="https://cdn.jsdelivr.net/npm/mathjax@3.0.1/es5/tex-mml-chtml.js">
+      </script>
+  </head>
+  <body>
+    <h1> Simulation of basic interacting particle systems (IPS) </h1>
+    <p> Our goal is to simulate the dynamics of an infinite number of particles randomly hopping on the one-dimensional Torus  according to some predescribed MARKOVIAN dynamics. </p>
+    <p> Let us denote by \( \{\eta(t):t\geq 0\} \) the Markov process to be simulated, in configuration notation, with state space \( \Omega \). For sake of simplicity we assume \( \Omega \) to be of the type \( \Omega= \Lambda^{T}\) where \( \Lambda= N \) or \( \Lambda= \{0,1,\ldots, \alpha \} \). This means, for a configuration \( \eta = (\eta_i: i \in T )\) , \( \eta_i \) denotes the number of particles at site \( i \in T\).  </p>
+    <p>  In this notation, we can analytically describe the evolution of our systems via the following  infinitesimal generator working on local functions \(f: \Omega \to R\) as follows:
+      \[
+      L f(\eta) = \sum_{i \in T} \sum_{r \in T} p(r) \, \eta_i \, ( \alpha + \sigma \eta_{i+r}) \, (f(\eta^{i,i+r})-f(\eta))
+      \]
+      where \( \eta^{i,i+r} \) denotes the configuration obtained from \( \eta \) by removing a particle from position \( i \in T\) and moving it to position \( i+r \), i.e.,
+      \[
+      \eta^{i,i+r}  = \eta - \delta_i + \delta_{i+r}
+      \]
+    </p>
+
+    <p> The parameters \( (\sigma,\alpha)\in \{0,1\}\times (0,\infty)\cup \{-1\}\times N \) determine the type of interaction among particles as follows:   </p>
+    <h3> Independent Random Walkers (IRW)  </h3>
+    <p>  This particle system corresponds to the choice \( \sigma=0 \) and the intensity parameter \( \alpha \in R \) regulates the rate at which the  particles move independently from each other  </p>
+    <h3> Symmetric Exclusion Process (SEP)  </h3>
+    <p> The choice \( \sigma=-1 \) results in exclusion interaction. For this process the  parameter \( \alpha \) takes values  in the set of natural numbers, \( \alpha \in [k] \subset N \), as it determines the maximum number of particles allowed  per site.</p>
+    <h3> Symmetric Inclusion Process  </h3>
+    <p>  The choice \( \sigma=1 \) gives rise to an interaction of inclusion-type consisting of  particles  attracting each other at rate \( p(r) \). Moreover particles move independently from each other at rate \( \alpha p(r)\) with \( \alpha \in R \)</p>
+    <h2> First simulation: simple symmetric random walkers </h2>
+    <p>
+        In the console below we are able to simulate a system of particles moving according to the infinitesimal generator \( L \) for the nearest neighbor case. This means, for a transition function of the following form:
+        \[
+          p(r) =
+          \begin{cases}
+          \frac{1}{2} & \text{if  }  \left\lvert r \right\rvert = 1 \\
+           0     & \text{else}
+          \end{cases}
+        \]
+        The console allows us to control the following:
+        <ol type = "1">
+          <li>Size of particles: A natural number between 1 and 30. This parameter sets the radius of all particles. </li>
+          <li>Number of particles: For obvious reasons we are only allowed to place a finite number of particles. </li>
+          <li>Alpha value : This parameter controls the rate at wich the internal clock of each particle rings. </li>
+          <li>By right-clicking (holding) over the canvas we can pause the simulation. After releasing the simulation continues. </li>
+        </ol>
+        It is important to recall that particles are supposed to be hopping around the one-dimensional torus. Therefore, at the boundaries the particles behave in a toroidal manner. This means that a particle leaving the screen from the left side will appear from the right, and viceversa.
+    </p>
+
+    <p>
+      Another important remark is about time. On the left upper corner of the canvas, the current simulated time is displayed. This means that the displayed number is a sum of a finite number of exponentially ditributed random variables. Each of these random variables corresponds to the ringing time of the internal clock of a particle. Notice that the rate at which
+      the clocks of the particles ring is determined by the parameter alpha. Hence, the bigger the alpha, the faster the ringing of the clocks. Therefore, the smaller the total simulation time for a comparable number of events with a smaller value of alpha.
+    </p>
+
+    <div id="sketch-holder" style="position: relative;">
+      <!-- Our sketch will go here! -->
+    </div>
+    <p> This simulation is still on Alpha version (23/10/2020)  </p>
+  </body>
+</html>
