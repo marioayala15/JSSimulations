@@ -38,7 +38,10 @@
 
     <p> The parameters \( (\sigma,\alpha)\in \{0,1\}\times (0,\infty)\cup \{-1\}\times N \) determine the type of interaction among particles as follows:   </p>
     <h3> Independent Random Walkers (IRW)  </h3>
-    <p>  This particle system corresponds to the choice \( \sigma=0 \) and the intensity parameter \( \alpha \in R \) regulates the rate at which the  particles move independently from each other  </p>
+    <p>  This particle system corresponds to the choice \( \sigma=0 \) and the intensity parameter \( \alpha \in R \) regulates the rate at which each of the particles move independently from each other.
+
+          According to the infinitesimal generator \( L \), the dynamics can be described in words as follows:
+    </p>
     <h3> Symmetric Exclusion Process (SEP)  </h3>
     <p> The choice \( \sigma=-1 \) results in exclusion interaction. For this process the  parameter \( \alpha \) takes values  in the set of natural numbers, \( \alpha \in [k] \subset N \), as it determines the maximum number of particles allowed  per site.</p>
     <h3> Symmetric Inclusion Process  </h3>
@@ -55,7 +58,7 @@
         \]
         The console allows us to control the following:
         <ol type = "1">
-          <li>Size of particles: A natural number between 1 and 30. This parameter sets the radius of all particles. </li>
+          <li>Size of particles: A natural number in {10,20}. This parameter sets the radius of all particles. </li>
           <li>Number of particles: For obvious reasons we are only allowed to place a finite number of particles. </li>
           <li>Alpha value : This parameter controls the rate at wich the internal clock of each particle rings. </li>
           <li>By right-clicking (holding) over the canvas we can pause the simulation. After releasing the simulation continues. </li>

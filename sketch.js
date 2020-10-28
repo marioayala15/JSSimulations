@@ -37,7 +37,7 @@ function initButtons(){
   sizepartbox.parent('sketch-holder');
   sizepartbox.position(750,265);
   sizepartbox.size(30);
-  slider = createSlider(1,30,10,1);
+  slider = createSlider(10,20,10,10);
   slider.parent('sketch-holder');
   slider.position(610,300);
   slider.input(sliderChange);
