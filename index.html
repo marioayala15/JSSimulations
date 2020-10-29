@@ -47,7 +47,7 @@
     <p>  The choice \( \sigma=1 \) gives rise to an interaction of inclusion-type consisting of  particles  attracting each other at rate \( p(r) \). Moreover particles move independently from each other at rate \( \alpha p(r)\) with \( \alpha \in R \)</p>
     <h2> First simulation: simple symmetric random walkers </h2>
     <p>
-        In the console below we are able to simulate a system of particles moving according to the infinitesimal generator \( L \) for the nearest neighbor case. This means, for a transition function of the following form:
+        In the console below we are able to simulate a system of particles moving according to the infinitesimal generator \( L \) for the symmetric nearest neighbor case. This means, for a transition function of the following form:
         \[
           p(r) =
           \begin{cases}
@@ -86,6 +86,14 @@
     <h2> Independent walkers: the assymetric case</h2>
     <p>
       The transition function can also be assymetric.
+      \[
+        p(r) =
+        \begin{cases}
+        p & \text{if  }  r = 1 \\
+        1-p & \text{if  }  r = -1 \\
+         0     & \text{else}
+        \end{cases}
+      \]
     </p>
     <div id='sketch-holder-three' style="position: relative;">
       <!-- Our sketch will go here! -->

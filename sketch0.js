@@ -797,47 +797,57 @@ var sketch_four= function(s){
     s.finishButton.size(70,70);
     s.finishButton.style('background-color',"red");
     s.finishButton.style('color',"white");
-    s.headslider = s.createP("Geometry: ");
-    s.headslider.parent('sketch-holder-four');
-    s.headslider.position(610,250);
-    s.geombox = s.createInput("Circle");
-    s.geombox.parent('sketch-holder-four');
-    s.geombox.position(750,265);
-    s.geombox.size(80);
-    s.slider = s.createSlider(1,2,1,1);
-    s.slider.parent('sketch-holder-four');
-    s.slider.position(610,300);
-    s.slider.input(s.sliderChange);
+
+
     s.headsliderparti=s.createP("Number of particles: ");
     s.headsliderparti.parent('sketch-holder-four');
-    s.headsliderparti.position(610,320);
+    s.headsliderparti.position(610,250);
     s.numbpartbox = s.createInput("10");
     s.numbpartbox.parent('sketch-holder-four');
-    s.numbpartbox.position(750,335);
+    s.numbpartbox.position(750,265);
     s.numbpartbox.size(30);
     s.sliderparti = s.createSlider(1,1000,10,5);
     s.sliderparti.parent('sketch-holder-four');
-    s.sliderparti.position(610,370);
+    s.sliderparti.position(610,300);
     s.sliderparti.input(s.sliderPartiChange);
     s.buttonSubmitNum = s.createButton('Submit');
     s.buttonSubmitNum.parent('sketch-holder-four');
     s.buttonSubmitNum.position(s.numbpartbox.x + s.numbpartbox.width+10, s.numbpartbox.y);
     s.buttonSubmitNum.mouseClicked(s.updateSliderPartiValue);
+
     s.headslideralpha=s.createP("Alpha value: ");
     s.headslideralpha.parent('sketch-holder-four');
-    s.headslideralpha.position(610,390);
+    s.headslideralpha.position(610,320);
     s.alphabox = s.createInput("1");
     s.alphabox.parent('sketch-holder-four');
-    s.alphabox.position(750,405);
+    s.alphabox.position(750,335);
     s.alphabox.size(50);
     s.slideralpha = s.createSlider(0.001,10,1,0.001);
     s.slideralpha.parent('sketch-holder-four');
-    s.slideralpha.position(610,440);
+    s.slideralpha.position(610,370);
     s.slideralpha.input(s.sliderAlphaChange);
     s.buttonSubmitalpha= s.createButton('Submit');
     s.buttonSubmitalpha.parent('sketch-holder-four');
     s.buttonSubmitalpha.position(s.alphabox.x + s.alphabox.width+10, s.alphabox.y);
     s.buttonSubmitalpha.mouseClicked(s.updateSliderAlphaValue);
+
+    s.headsliderReser=s.createP("Reservoirs rate: ");
+    s.headsliderReser.parent('sketch-holder-four');
+    s.headsliderReser.position(610,390);
+    s.reserbox = s.createInput("1");
+    s.reserbox.parent('sketch-holder-four');
+    s.reserbox.position(750,405);
+    s.reserbox.size(50);
+    s.sliderReser = s.createSlider(0.001,10,1,0.001);
+    s.sliderReser.parent('sketch-holder-four');
+    s.sliderReser.position(610,440);
+    s.sliderReser.input(s.sliderReserChange);
+    s.buttonSubmitReser= s.createButton('Submit');
+    s.buttonSubmitReser.parent('sketch-holder-four');
+    s.buttonSubmitReser.position(s.reserbox.x + s.reserbox.width+10, s.reserbox.y);
+    s.buttonSubmitReser.mouseClicked(s.updateSliderReserValue);
+
+
     s.timeDisplayer = s.createP("time = 0 ")
     s.timeDisplayer.position(10,0);
     s.timeDisplayer.parent('sketch-holder-four');
@@ -847,14 +857,14 @@ var sketch_four= function(s){
     s.finishButton.mouseClicked(s.parar);
   }
 
-    s.sliderChange=function(){
-      if(s.slider.value()==1){
-        s.geombox.value("Circle");
-      }
-      if(s.slider.value()==2){
-        s.geombox.value("Infinite lattice");
-      }
-  }
+  //   s.sliderChange=function(){
+  //     if(s.slider.value()==1){
+  //       s.geombox.value("Circle");
+  //     }
+  //     if(s.slider.value()==2){
+  //       s.geombox.value("Infinite lattice");
+  //     }
+  // }
 
     s.sliderPartiChange=function(){
       s.numbpartbox.value(s.sliderparti.value());
@@ -863,6 +873,10 @@ var sketch_four= function(s){
     s.sliderAlphaChange=function(){
       s.alphabox.value(s.slideralpha.value());
   }
+
+  s.sliderReserChange=function(){
+    s.reserbox.value(s.sliderReser.value());
+ }
 
 
   s.updateSliderPartiValue=function(){
@@ -875,9 +889,14 @@ var sketch_four= function(s){
     s.slideralpha.value(s.alphabox.value());
   }
 
+  s.updateSliderReserValue=function(){
+   //if the textbox is updated, update the slider
+   s.sliderReser.value(s.reserbox.value());
+ }
+
    s.comenzar=function(){
     s.running= true;
-    s.system = new ParticleSystem(10,s.sliderparti.value(),s.slideralpha.value(),s.slider.value());
+    s.system = new ParticleSystem(10,s.sliderparti.value(),s.slideralpha.value(),s.sliderReser.value());
   }
 
   s.parar=function(){
@@ -888,18 +907,18 @@ var sketch_four= function(s){
 
   s.draw= function() {
       s.background(51);
+      drawReservoirs(10);
       if (s.running){
-        s.system.run(10,s.sliderparti.value(),s.slideralpha.value(),s.slider.value());
+        s.system.run(10,s.sliderparti.value(),s.slideralpha.value(),s.sliderReser.value());
         s.timeDisplayer.html('time = '+s.system.totalTime);
     }
   }
 
   // A simple Particle class
-  let Particle = function(radius,x,y,geom) {
+  let Particle = function(radius,x,y) {
     this.x = x;
     this.y = y;
     this.radius = radius;
-    this.geometry = geom;  // either 1 or 2 , 1 meaning toroidal and 2 infinite lattice
   };
 
   Particle.prototype.run = function() {
@@ -909,18 +928,12 @@ var sketch_four= function(s){
 
   // Method to move particle
   Particle.prototype.move = function(){
-    if(this.geometry ==1){
-      this.x += this.radius*s.random([-1,1]);
-      if (this.x > s.canvas.width ){
-        this.x = this.radius;
-      }
-      if (this.x < 0){
-        this.x = s.canvas.width-this.radius;
-      }
+    this.x += this.radius*s.random([-1,1]);
+    if(this.x > s.canvas.width-2*this.radius ){
+      this.x = s.canvas.width-3*this.radius;
     }
-
-    if(this.geometry==2){
-        this.x += this.radius*s.random([-1,1]);
+    if(this.x < 2*this.radius){
+      this.x = 3*this.radius;
     }
   };
 
@@ -933,7 +946,7 @@ var sketch_four= function(s){
   };
 
 
-  let ParticleSystem = function(r,numbParticles,alpha,geom) {
+  let ParticleSystem = function(r,numbParticles,alpha,reser) {
     this.particles = [];
     this.totalTime = 0;
     this.alpha = alpha;
@@ -942,7 +955,7 @@ var sketch_four= function(s){
         var xposition = 2*r*s.floor((s.canvas.width/(2*r))*s.random());
         // var xposition = canvas.width/2;
         var yposition =s.canvas.height-r;
-        p = new Particle(r,xposition,yposition,geom);
+        p = new Particle(r,xposition,yposition);
         var coincidentalParticles = [];
 
         for (var j=0; j< i; j++){
@@ -961,7 +974,7 @@ var sketch_four= function(s){
     };
   };
 
-  ParticleSystem.prototype.run = function(r,numbParticles,alpha,geom) {
+  ParticleSystem.prototype.run = function(r,numbParticles,alpha,reser) {
     var index = s.floor(numbParticles*s.random()); //minimum of exponential distributed r.v. with the same parameter
   	var p = this.particles[index];
   	var oldxposition = p.x;
@@ -1014,9 +1027,19 @@ var sketch_four= function(s){
     return (-1/lambda)*Math.log(1-Math.random());
   }
 
+  function drawReservoirs(size){
+    for(let i=0; i<30;i++){
+      s.stroke(200);
+      s.strokeWeight(2);
+      s.fill("red");
+      s.ellipse(size, s.canvas.height-size-i*size, size, size);
+      s.ellipse(s.canvas.width-size, s.canvas.height-size-i*size, size, size);
+    }
+  }
+
 };
 
 var myp5_one = new p5(sketch_one);
 var myp5_two = new p5(sketch_two);
 var myp5_three = new p5(sketch_three);
-// var myp5_four = new p5(sketch_four);
+var myp5_four = new p5(sketch_four);
