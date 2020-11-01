@@ -3,20 +3,52 @@
   box-sizing: border-box;
 }
 
-/* Create two equal columns that floats next to each other */
-.column {
-  float: left;
-  width: 45%;
-  padding: 10px;
-  line-height: 150%;
+.responsive {
+  width: 100%;
+  height: auto;
 }
 
-/* Clear floats after the columns */
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
+/*  SECTIONS  */
+.section {
+	clear: both;
+	padding: 0px;
+	margin: 0px;
 }
+
+/*  COLUMN SETUP  */
+.col {
+	display: block;
+	float:left;
+	margin: 1% 0 1% 5%;
+}
+.col:first-child { margin-left: 0; }
+
+/*  GROUPING  */
+.group:before,
+.group:after { content:""; display:table; }
+.group:after { clear:both;}
+.group { zoom:1; /* For IE 6/7 */ }
+/*  GRID OF TWO  */
+.span_2_of_2 {
+	width: 100%;
+}
+.span_1_of_2 {
+	width: 47.5%;
+}
+
+/*  GO FULL WIDTH AT LESS THAN 480 PIXELS */
+
+@media only screen and (max-width: 480px) {
+	.col { 
+		margin: 1% 0 1% 0%;
+	}
+}
+
+@media only screen and (max-width: 480px) {
+	.span_2_of_2, .span_1_of_2 { width: 100%; }
+}
+
+
 
 .footer {
   position: relative;
@@ -128,6 +160,7 @@ nav{
     display:inline;
     transition: display 0.5s ease-in;
   }
+
 }
 
 
@@ -162,11 +195,11 @@ nav{
   transform: rotate(45deg) translate(-5px,-6px);
 }
 
-body {
+/* body {
   position:relative;
   text-align:justify;
   align-items: center;
-  }
+  } */
 
   .simu {
     position: relative;
@@ -191,18 +224,16 @@ body {
 
 
 
-p {
-    /* max-width: 1000px;
-    min-width: 100px; */
+/* p {
     text-align:justify;
     align-items: center;
     margin-top: 1em ;
     margin-bottom: 1em ;
-  }
+  } */
 
 img {
   border-radius: 75px;
-  display: block;
+  /* display: block; */
   margin-left: auto;
   margin-right: auto;
 }
