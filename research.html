@@ -6,7 +6,7 @@
     <title>Research </title>
     <script src="p5/p5.js"></script>
     <script src="p5/addons/p5.dom.js"></script>
-    <script src="sketch0.js"></script>
+    <!-- <script src="sketch0.js"></script> -->
     <link href="https://fonts.googleapis.com/css2?family=Grandstander:wght@300&family=Mukta&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
@@ -32,8 +32,8 @@
       </div>
     </nav>
 
-    <div class="col-md-8" style="min-height: 100vh;">
-        <h4 id="publications">Publications</h4>
+    <div class="div-rese">
+        <h1>Reserach</h1>
 
         <p>
             My research interests lie at the intersection of Markov processes and statistical mechanics. In specific, in the context of interacting particle systems (IPS), my research deals with the application of a type of duality technique to the theory of fluctuations from the hydrodynamic limit.
@@ -42,19 +42,50 @@
         <p>
             It is in this direction of research, and for IPS that enjoy the property of self-duality, that the following contributions have materialized:
         </p>
-        <strong>Peer-reviewed:</strong><br/>
-        <ul>
-        <li class="paper" words="add, your, keywords, here"><a href="https://revistasipgh.org/index.php/rehiam/article/view/648">Redes aristocráticas mexicanas a principios del siglo XX en Álbum de Damas. Revista quincenal ilustrada (1907)
-        </a> Alma Liliana Vargas Aguirre, Revista de Historia de América, 289-317.</li>
-        </ul>
+        
+    </div>
 
-        <strong>Other:</strong><br/>
-        <ul>
-        <li class="paper" words="add, your, keywords, here"><a href="#">El sexismo ambivalente en la construcción social de la vulnerabilidad
-        </a>. </br> Alma Liliana Vargas Aguirre, Diálogos interdisciplinarios desde las ciencias sociales</li>
-        <li class="paper" words="add, your, keywords, here"><a href="https://eventos.ucol.mx/content/micrositios/265/file/1er%20Coloquio%20de%20Ciencias%20Sociales%20260117%20v4.pdf#page=18">La expresión del sexismo en la construcción social del riesgo</a>.
-          </br> Alma Liliana Vargas Aguirre, Memoria del 1er Coloquio Interinstitucional de programas de Doctorado en Ciencias Sociales y Humanas.</li>
-        </ul>
+    <!-- <div id="myPublic"></div>
+    <script>
+        fetch('research.json')
+            .then(function (response) {
+                return response.json();
+            })
+            .then(function (data) {
+                appendData(data);
+            })
+            .catch(function (err) {
+                console.log('error: ' + err);
+            });
+        function appendData(data) {
+            var mainContainer = document.getElementById("myPublic");
+            for (var i = 0; i < data.length; i++) {
+                var div = document.createElement("div");
+                div.innerHTML = 'Name: ' + data[i].firstName + ' ' + data[i].lastName;
+                mainContainer.appendChild(div);
+            }
+        }
+    </script> -->
+
+
+    <div class="footer">
+      <div class="left_footer">
+      <h1>Address</h1>
+      <p>TU Delft/ DIAM<br>
+      Applied Probability<br>
+      Kamer W1.540<br>
+      Mourik Broekmanweg 6<br>
+      2628 XE Delft, The Netherlands</p>
+      </div>
+
+      <div class="right_footer">
+        <h1>Links</h1>
+        <p><a href="https://www.tudelft.nl/en/eemcs/the-faculty/departments/applied-mathematics/applied-probability/" target="_blank">TU Delft Applied Probability</a><br>
+          <a href="https://arxiv.org/search/math?searchtype=author&query=Ayala%2C+Mario" target="_blank">Arxiv</a><br>
+          <a href="https://scholar.google.com/citations?user=xRR2oqUAAAAJ&hl=es" target="_blank">Google scholar</a><br>
+          <a href="https://www.researchgate.net/profile/Mario_Ayala4" target="_blank">Researchgate</a>
+        </p>
+      </div>
     </div>
 
     <script src="app.js"></script>

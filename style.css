@@ -1,17 +1,53 @@
 *{
-  margin: 0px;
   padding: 0px;
   box-sizing: border-box;
+}
+
+/* Create two equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 45%;
+  padding: 10px;
+  line-height: 150%;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.footer {
+  position: relative;
+  left: 10%;
+  bottom: 10px;
+  width: 70%;
+  height: 20%;
+  background-color: whitesmoke;
+  color: black;
+  font-size: normal;
+}
+
+.left_footer {
+  width: 45%;
+  Float: left;
+  display:inline;
+}
+
+.right_footer {
+  width: 45%;
+  Float: right;
+  display:inline;
 }
 
 nav{
   display: flex;
   justify-content: space-around;
   align-items: center;
-  min-height: 8vh;
+  min-height: 10vh;
   background-color: blue;
   font-family: 'Mukta', sans-serif;
-
 }
 
 .logo{
@@ -50,6 +86,7 @@ nav{
   height: 2px;
   background-color:rgb(245, 231, 231);
   margin: 5px;
+  transition: all 0.3s ease;
 }
 
 @media  screen and (max-width:768px){
@@ -65,7 +102,7 @@ nav{
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 30%;
+    width: 100%;
     transform: translateX(100%);
     transition: transform 0.5s ease-in;
   }
@@ -77,10 +114,29 @@ nav{
   .burger {
     display: block;
   }
+
+  .left_footer {
+    width: 45%;
+    Float: left;
+    display:inline;
+    transition: display 0.5s ease-in;
+  }
+  
+  .right_footer {
+    width: 45%;
+    Float: right;
+    display:inline;
+    transition: display 0.5s ease-in;
+  }
 }
+
 
 .nav-active{
   transform: translateX(0%);
+}
+
+.footer-nav-active{
+  display:none;
 }
 
 @keyframes navLinkFade{
@@ -94,19 +150,59 @@ nav{
   }
 }
 
+.toggle .line1{
+  transform: rotate(-45deg) translate(-5px,6px);
+}
+
+.toggle .line2{
+  opacity: 0;
+}
+
+.toggle .line3{
+  transform: rotate(45deg) translate(-5px,-6px);
+}
+
 body {
   position:relative;
-  /* left:50px;
-  right:50px; */
-  /* max-width: 1000px;
-  min-width: 100px; */
   text-align:justify;
   align-items: center;
   }
 
-p {
-    max-width: 1000px;
+  .simu {
+    position: relative;
+    left:15%;
+    right:15%;
+    max-width: 900px;
     min-width: 100px;
     text-align:justify;
     align-items: center;
+    margin-bottom: 5vh;
+    }
+
+  .div-rese {
+    left:15%;
+    right:15%;
+    max-width: 900px;
+    min-width: 100px;
+    text-align:justify;
+    align-items: center;
+    margin-bottom: 5vh;
+    }
+
+
+
+p {
+    /* max-width: 1000px;
+    min-width: 100px; */
+    text-align:justify;
+    align-items: center;
+    margin-top: 1em ;
+    margin-bottom: 1em ;
   }
+
+img {
+  border-radius: 75px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
