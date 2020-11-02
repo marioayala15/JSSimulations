@@ -233,16 +233,19 @@ body {
   overflow-x: hidden;
   }
 
+a {
+  text-decoration: none;
+}
+
 .div-simu {
-    position: relative;
-    left:15%;
-    right:15%;
-    max-width: 900px;
-    min-width: 100px;
-    text-align:justify;
-    align-items: center;
-    margin-bottom: 5vh;
-    }
+  left:15%;
+  right:15%;
+  max-width: 900px;
+  min-width: 100px;
+  text-align:justify;
+  align-items: center;
+  margin-bottom: 5vh;
+  }
 
 .div-rese {
     left:15%;
@@ -252,4 +255,6 @@ body {
     text-align:justify;
     align-items: center;
     margin-bottom: 5vh;
-    }
+  }
+
+    

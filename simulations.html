@@ -31,11 +31,11 @@
         <div class="line3"></div>
       </div>
     </nav>
-    <div class="div-simu">
-     <h1 class="simu"> Simulation of basic interacting particle systems (IPS) </h1>
-     <p class="simu"> Our goal is to simulate the dynamics of an infinite number of particles randomly hopping on the one-dimensional Torus  according to some predescribed MARKOVIAN dynamics. </p>
-      <p class="simu"> Let us denote by \( \{\eta(t):t\geq 0\} \) the Markov process to be simulated, in configuration notation, with state space \( \Omega \). For sake of simplicity we assume \( \Omega \) to be of the type \( \Omega= \Lambda^{T}\) where \( \Lambda= N \) or \( \Lambda= \{0,1,\ldots, \alpha \} \). This means, for a configuration \( \eta = (\eta_i: i \in T )\) , \( \eta_i \) denotes the number of particles at site \( i \in T\).  </p>
-      <p class="simu">  In this notation, we can analytically describe the evolution of our systems via the following  infinitesimal generator working on local functions \(f: \Omega \to R\) as follows:
+    <!-- <div class="div-simu">
+     <h1> Simulation of basic interacting particle systems (IPS) </h1>
+     <p> Our goal is to simulate the dynamics of an infinite number of particles randomly hopping on the one-dimensional Torus  according to some predescribed MARKOVIAN dynamics. </p>
+      <p> Let us denote by \( \{\eta(t):t\geq 0\} \) the Markov process to be simulated, in configuration notation, with state space \( \Omega \). For sake of simplicity we assume \( \Omega \) to be of the type \( \Omega= \Lambda^{T}\) where \( \Lambda= N \) or \( \Lambda= \{0,1,\ldots, \alpha \} \). This means, for a configuration \( \eta = (\eta_i: i \in T )\) , \( \eta_i \) denotes the number of particles at site \( i \in T\).  </p>
+      <p>  In this notation, we can analytically describe the evolution of our systems via the following  infinitesimal generator working on local functions \(f: \Omega \to R\) as follows:
       \[
       L f(\eta) = \sum_{i \in T} \sum_{r \in T} p(r) \, \eta_i \, ( \alpha + \sigma \eta_{i+r}) \, (f(\eta^{i,i+r})-f(\eta))
       \]
@@ -45,18 +45,18 @@
       \]
       </p>
 
-      <p class="simu"> The parameters \( (\sigma,\alpha)\in \{0,1\}\times (0,\infty)\cup \{-1\}\times N \) determine the type of interaction among particles as follows:   </p>
-      <h3 class="simu"> Independent Random Walkers (IRW)  </h3>
-      <p class="simu">  This particle system corresponds to the choice \( \sigma=0 \) and the intensity parameter \( \alpha \in R \) regulates the rate at which each of the particles move independently from each other.
+      <p> The parameters \( (\sigma,\alpha)\in \{0,1\}\times (0,\infty)\cup \{-1\}\times N \) determine the type of interaction among particles as follows:   </p>
+      <h3> Independent Random Walkers (IRW)  </h3>
+      <p>  This particle system corresponds to the choice \( \sigma=0 \) and the intensity parameter \( \alpha \in R \) regulates the rate at which each of the particles move independently from each other.
 
           According to the infinitesimal generator \( L \), the dynamics can be described in words as follows:
       </p>
-      <h3 class="simu"> Symmetric Exclusion Process (SEP)  </h3>
-      <p class="simu"> The choice \( \sigma=-1 \) results in exclusion interaction. For this process the  parameter \( \alpha \) takes values  in the set of natural numbers, \( \alpha \in [k] \subset N \), as it determines the maximum number of particles allowed  per site.</p>
-      <h3 class="simu"> Symmetric Inclusion Process  </h3>
-      <p class="simu">  The choice \( \sigma=1 \) gives rise to an interaction of inclusion-type consisting of  particles  attracting each other at rate \( p(r) \). Moreover particles move independently from each other at rate \( \alpha p(r)\) with \( \alpha \in R \)</p>
-      <h2 class="simu"> First simulation: simple symmetric random walkers </h2>
-      <p class="simu">
+      <h3> Symmetric Exclusion Process (SEP)  </h3>
+      <p > The choice \( \sigma=-1 \) results in exclusion interaction. For this process the  parameter \( \alpha \) takes values  in the set of natural numbers, \( \alpha \in [k] \subset N \), as it determines the maximum number of particles allowed  per site.</p>
+      <h3> Symmetric Inclusion Process  </h3>
+      <p>  The choice \( \sigma=1 \) gives rise to an interaction of inclusion-type consisting of  particles  attracting each other at rate \( p(r) \). Moreover particles move independently from each other at rate \( \alpha p(r)\) with \( \alpha \in R \)</p>
+      <h2> First simulation: simple symmetric random walkers </h2>
+      <p >
         In the console below we are able to simulate a system of particles moving according to the infinitesimal generator \( L \) for the symmetric nearest neighbor case. This means, for a transition function of the following form:
         \[
           p(r) =
@@ -66,7 +66,7 @@
           \end{cases}
         \]
         The console allows us to control the following:
-        <ol  class="simu">
+        <ol>
           <li>Size of particles: A natural number in {10,20}. This parameter sets the radius of all particles. </li>
           <li>Number of particles: For obvious reasons we are only allowed to place a finite number of particles. </li>
           <li>Alpha value : This parameter controls the rate at wich the internal clock of each particle rings. </li>
@@ -74,33 +74,56 @@
         </ol>
       </p>
 
-      <p class="simu">
+      <p>
       It is important to recall that particles are supposed to be hopping around the one-dimensional torus. Therefore, at the boundaries the particles behave in a toroidal manner. 
       This means that a particle leaving the screen from the left side will appear from the right, and viceversa.
       </p>
 
-      <p class="simu">
+      <p>
       Another important remark is about time. On the left upper corner of the canvas, the current simulated time is displayed. This means that the displayed number is a sum of a finite number of exponentially ditributed random variables. Each of these random variables corresponds to the ringing time of the internal clock of a particle. Notice that the rate at which
       the clocks of the particles ring is determined by the parameter alpha. Hence, the bigger the alpha, the faster the ringing of the clocks. Therefore, the smaller the total simulation time for a comparable number of events with a smaller value of alpha.
       </p>
 
-    </div>
+    </div> -->
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit ipsam minima, modi animi provident reiciendis delectus, vel perspiciatis quo amet expedita nisi adipisci sint nesciunt eum molestiae odit. Quae, quod.
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui at exercitationem quidem possimus, veniam adipisci labore, autem beatae nihil, fuga animi eius distinctio! Dolore quam facere tempora facilis eius eligendi!
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat hic at rem asperiores numquam voluptatibus aut, natus odio repellat culpa dicta. Voluptatum voluptate aut quaerat voluptatibus corporis quo labore quae?
+      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consectetur cupiditate, eos molestias distinctio ea veniam. Optio odit magni libero necessitatibus consectetur? Modi, eos eligendi! Veniam neque fuga amet in libero.
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi maiores exercitationem reiciendis commodi deleniti blanditiis molestias sed fuga repellat atque, quos quia eveniet quidem neque praesentium. Fuga repudiandae aperiam velit.
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore nam nemo, mollitia nesciunt officia voluptas, quis repellat beatae autem maiores qui quidem sunt ipsum illo asperiores neque. Est, dignissimos voluptate?
+      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Omnis natus tempore ut debitis repellat cupiditate amet incidunt molestias reprehenderit, eos ipsa ex harum sit recusandae dolorum, iste, a qui libero!
+      Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cumque maxime tempora vero nobis doloremque corrupti ratione ab sequi, possimus, quisquam eaque dignissimos aut maiores. Voluptatem iure asperiores voluptate accusamus impedit.
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore ea repudiandae rem quibusdam voluptatem saepe, voluptate numquam impedit dicta magnam sint, laudantium temporibus eligendi optio incidunt corrupti! Quibusdam, rem repellendus!
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit perferendis earum fuga. Ea eos quas molestiae odit autem fuga neque, adipisci in dolores veniam quasi sit quis dolorum vel dolor!
+      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sint deserunt numquam, veniam repudiandae autem consectetur voluptates ducimus, fugit dicta magni id, omnis blanditiis quasi a placeat quod ad porro voluptate.
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia repellendus magnam adipisci ipsum tempore, corporis earum dolorum consectetur? Facilis voluptates rem nostrum excepturi ab iure quidem ea odit totam amet!
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet quos atque esse ad facilis maiores, ratione error vel labore doloribus nobis tempora suscipit veniam maxime. Doloremque maiores quisquam facilis velit.
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto, ipsam, impedit non delectus, ea numquam consequuntur amet hic doloribus cumque sint rerum. Voluptatibus nobis consectetur voluptatem quaerat, inventore et sequi?
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint recusandae deleniti, similique modi quas cumque eos? Asperiores ducimus omnis, soluta aperiam illo unde possimus facere accusantium optio porro, doloribus sit.
+      Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquid dolorum quibusdam molestias unde blanditiis deleniti et, aperiam dolores consequuntur explicabo similique ab consequatur provident, magni in pariatur maxime, tenetur quo.
+      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Placeat, quae reiciendis architecto fugit natus quis minus maiores, nam recusandae, impedit nesciunt odio ad et amet commodi illum excepturi ipsum error.
+      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolor animi deleniti ullam a asperiores magnam unde, fugit quae! Veritatis libero veniam cupiditate saepe dolorem illum nostrum quo dolor. Aliquid, suscipit!
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus ipsam nesciunt eius, unde amet eos, doloremque vel officiis voluptatem nisi facere! Minima, ducimus? Ratione accusamus quasi eum, debitis perferendis magni!
+      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Reprehenderit repellendus soluta debitis sit possimus fuga velit. Reiciendis earum, alias repellendus dignissimos odio assumenda at voluptatibus! Neque cumque obcaecati ipsa impedit!
 
-    <div id="sketch-holder" class="simu" style="position: relative;">
-      <!-- Our sketch will go here! -->
-    </div>
-    <p class="simu"> This simulation is still on Alpha version (23/10/2020)  </p>
+    </p>
 
-    <h2 class="simu"> Independent walkers: reversible measures </h2>
-    <p class="simu"> 
+    <h2> Independent walkers</h2>
+    <div id="sketch-holder" style="position: relative;">
+    </div>
+    <p> This simulation is still on Alpha version (23/10/2020)  </p>
+
+    <h2> Independent walkers: reversible measures </h2>
+    <p > 
       A system of independet walkers is known to have
     </p>
-    <div id='sketch-holder-two' class="simu" style="position: relative;">
-      <!-- Our sketch will go here! -->
+
+    <div id='sketch-holder-two' style="position: relative;">
     </div>
 
-    <h2 class="simu"> Independent walkers: the asymmetric case</h2>
-    <p class="simu">
+    <h2> Independent walkers: the asymmetric case</h2>
+    <p>
       The transition function can also be asymmetric.
       \[
         p(r) =
@@ -111,19 +134,17 @@
         \end{cases}
       \]
     </p>
-    <div id='sketch-holder-three' class="simu" style="position: relative;">
-      <!-- Our sketch will go here! -->
+    <div id='sketch-holder-three' style="position: relative;">
     </div>
 
-    <h2 class="simu"> Independent walkers with reservoirs </h2>
-    <p class="simu">
+    <h2> Independent walkers with reservoirs </h2>
+    <p>
       We can also put the system in contact with reservoirs. In this case the generator of the system becomes
       \[
         L f(\eta) = L^{a}f(\eta) + L^{bulk}f(\eta) + L^{b}f(\eta)
       \]
     </p>
-    <div id='sketch-holder-four' class="simu" style="position: relative;">
-      <!-- Our sketch will go here! -->
+    <div id='sketch-holder-four' style="position: relative;">
     </div>
 
     <div class="footer">
