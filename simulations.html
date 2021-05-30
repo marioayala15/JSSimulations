@@ -6,7 +6,7 @@
     <title>Simulations</title>
     <script src="p5/p5.js"></script>
     <script src="p5/addons/p5.dom.js"></script>
-    <script src="sketch0.js"></script>
+    <script src="sketchmario.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Grandstander:wght@300&family=Mukta&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
@@ -14,7 +14,7 @@
         src="https://cdn.jsdelivr.net/npm/mathjax@3.0.1/es5/tex-mml-chtml.js">
     </script>
   </head>
-  <body>
+  <body style="margin-bottom: 10%;">
     <nav>
       <div class="logo">
         <h4>Mario Ayala</h4>
@@ -31,60 +31,7 @@
         <div class="line3"></div>
       </div>
     </nav>
-    <!-- <div class="div-simu">
-     <h1> Simulation of basic interacting particle systems (IPS) </h1>
-     <p> Our goal is to simulate the dynamics of an infinite number of particles randomly hopping on the one-dimensional Torus  according to some predescribed MARKOVIAN dynamics. </p>
-      <p> Let us denote by \( \{\eta(t):t\geq 0\} \) the Markov process to be simulated, in configuration notation, with state space \( \Omega \). For sake of simplicity we assume \( \Omega \) to be of the type \( \Omega= \Lambda^{T}\) where \( \Lambda= N \) or \( \Lambda= \{0,1,\ldots, \alpha \} \). This means, for a configuration \( \eta = (\eta_i: i \in T )\) , \( \eta_i \) denotes the number of particles at site \( i \in T\).  </p>
-      <p>  In this notation, we can analytically describe the evolution of our systems via the following  infinitesimal generator working on local functions \(f: \Omega \to R\) as follows:
-      \[
-      L f(\eta) = \sum_{i \in T} \sum_{r \in T} p(r) \, \eta_i \, ( \alpha + \sigma \eta_{i+r}) \, (f(\eta^{i,i+r})-f(\eta))
-      \]
-      where \( \eta^{i,i+r} \) denotes the configuration obtained from \( \eta \) by removing a particle from position \( i \in T\) and moving it to position \( i+r \), i.e.,
-      \[
-      \eta^{i,i+r}  = \eta - \delta_i + \delta_{i+r}
-      \]
-      </p>
-
-      <p> The parameters \( (\sigma,\alpha)\in \{0,1\}\times (0,\infty)\cup \{-1\}\times N \) determine the type of interaction among particles as follows:   </p>
-      <h3> Independent Random Walkers (IRW)  </h3>
-      <p>  This particle system corresponds to the choice \( \sigma=0 \) and the intensity parameter \( \alpha \in R \) regulates the rate at which each of the particles move independently from each other.
-
-          According to the infinitesimal generator \( L \), the dynamics can be described in words as follows:
-      </p>
-      <h3> Symmetric Exclusion Process (SEP)  </h3>
-      <p > The choice \( \sigma=-1 \) results in exclusion interaction. For this process the  parameter \( \alpha \) takes values  in the set of natural numbers, \( \alpha \in [k] \subset N \), as it determines the maximum number of particles allowed  per site.</p>
-      <h3> Symmetric Inclusion Process  </h3>
-      <p>  The choice \( \sigma=1 \) gives rise to an interaction of inclusion-type consisting of  particles  attracting each other at rate \( p(r) \). Moreover particles move independently from each other at rate \( \alpha p(r)\) with \( \alpha \in R \)</p>
-      <h2> First simulation: simple symmetric random walkers </h2>
-      <p >
-        In the console below we are able to simulate a system of particles moving according to the infinitesimal generator \( L \) for the symmetric nearest neighbor case. This means, for a transition function of the following form:
-        \[
-          p(r) =
-          \begin{cases}
-          \frac{1}{2} & \text{if  }  \left\lvert r \right\rvert = 1 \\
-           0     & \text{else}
-          \end{cases}
-        \]
-        The console allows us to control the following:
-        <ol>
-          <li>Size of particles: A natural number in {10,20}. This parameter sets the radius of all particles. </li>
-          <li>Number of particles: For obvious reasons we are only allowed to place a finite number of particles. </li>
-          <li>Alpha value : This parameter controls the rate at wich the internal clock of each particle rings. </li>
-          <li>By right-clicking (holding) over the canvas we can pause the simulation. After releasing the simulation continues. </li>
-        </ol>
-      </p>
-
-      <p>
-      It is important to recall that particles are supposed to be hopping around the one-dimensional torus. Therefore, at the boundaries the particles behave in a toroidal manner. 
-      This means that a particle leaving the screen from the left side will appear from the right, and viceversa.
-      </p>
-
-      <p>
-      Another important remark is about time. On the left upper corner of the canvas, the current simulated time is displayed. This means that the displayed number is a sum of a finite number of exponentially ditributed random variables. Each of these random variables corresponds to the ringing time of the internal clock of a particle. Notice that the rate at which
-      the clocks of the particles ring is determined by the parameter alpha. Hence, the bigger the alpha, the faster the ringing of the clocks. Therefore, the smaller the total simulation time for a comparable number of events with a smaller value of alpha.
-      </p>
-
-    </div> -->
+    
     <p>
       Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit ipsam minima, modi animi provident reiciendis delectus, vel perspiciatis quo amet expedita nisi adipisci sint nesciunt eum molestiae odit. Quae, quod.
       Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui at exercitationem quidem possimus, veniam adipisci labore, autem beatae nihil, fuga animi eius distinctio! Dolore quam facere tempora facilis eius eligendi!
@@ -110,62 +57,11 @@
     </p>
 
     <h2> Independent walkers</h2>
-    <div id="sketch-holder" style="position: relative;">
-    </div>
-    <p> This simulation is still on Alpha version (23/10/2020)  </p>
 
-    <h2> Independent walkers: reversible measures </h2>
-    <p > 
-      A system of independet walkers is known to have
-    </p>
-
-    <div id='sketch-holder-two' style="position: relative;">
+    <div class="container"> 
+      <div id="sketch1"></div>
     </div>
 
-    <h2> Independent walkers: the asymmetric case</h2>
-    <p>
-      The transition function can also be asymmetric.
-      \[
-        p(r) =
-        \begin{cases}
-        p & \text{if  }  r = 1 \\
-        1-p & \text{if  }  r = -1 \\
-         0     & \text{else}
-        \end{cases}
-      \]
-    </p>
-    <div id='sketch-holder-three' style="position: relative;">
-    </div>
-
-    <h2> Independent walkers with reservoirs </h2>
-    <p>
-      We can also put the system in contact with reservoirs. In this case the generator of the system becomes
-      \[
-        L f(\eta) = L^{a}f(\eta) + L^{bulk}f(\eta) + L^{b}f(\eta)
-      \]
-    </p>
-    <div id='sketch-holder-four' style="position: relative;">
-    </div>
-
-    <div class="footer">
-      <div class="left_footer">
-      <h1>Address</h1>
-      <p>TU Delft/ DIAM<br>
-      Applied Probability<br>
-      Kamer W1.540<br>
-      Mourik Broekmanweg 6<br>
-      2628 XE Delft, The Netherlands</p>
-      </div>
-
-      <div class="right_footer">
-        <h1>Links</h1>
-        <p><a href="https://www.tudelft.nl/en/eemcs/the-faculty/departments/applied-mathematics/applied-probability/" target="_blank">TU Delft Applied Probability</a><br>
-          <a href="https://arxiv.org/search/math?searchtype=author&query=Ayala%2C+Mario" target="_blank">Arxiv</a><br>
-          <a href="https://scholar.google.com/citations?user=xRR2oqUAAAAJ&hl=es" target="_blank">Google scholar</a><br>
-          <a href="https://www.researchgate.net/profile/Mario_Ayala4" target="_blank">Researchgate</a>
-        </p>
-      </div>
-    </div>
 
 
     <script src="app.js"></script>

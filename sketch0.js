@@ -1,9 +1,12 @@
 var sketch_one = function(s){
 
-   s.setup =function(){
-     s.canvas = s.createCanvas(500,500);
-     s.canvas.parent('sketch-holder');
-     s.initButtons();
+  let div;
+
+  s.setup =function(){
+    div=s.canvas.parentElement;
+    s.canvas = s.createCanvas(div.clientWidth, div.clientHeight);
+    s.canvas.parent('sketch-holder');
+    s.initButtons();
   }
 
   s.initButtons=function(){

@@ -12,13 +12,6 @@
   margin-right: auto;
 }
 
-/*  SECTIONS  */
-
-/* .section {
-	clear: both;
-	padding: 0px;
-	margin: 0px;
-} */
 
 /*  COLUMN SETUP  */
 .col {
@@ -257,4 +250,14 @@ a {
     margin-bottom: 5vh;
   }
 
+  .container {
+    height: 600px;
+  }
+
+  #sketch1 {
+    position: relative;
+    width: 80%;
+    height: 80%;
+    float:left;
+  }
     
